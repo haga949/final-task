@@ -2,594 +2,793 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>異世界の勇者 ～運命の旅路～ - AnimeHub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="base.css">
-    <link rel="icon" href="favicon.png">
-    <style>
-        .hero-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>異世界の勇者 ～運命の旅路～ - AnimeHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="icon" href="favicon (3).ico">
+  <style>
+    .episode-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      min-height: 120px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      gap: 12px;
+    }
 
-        .rating-stars {
-            color: #fbbf24;
-        }
+    .episode-thumb {
+      width: 160px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-        .rating-large {
-            font-size: 3rem;
-            font-weight: bold;
-        }
+    .episode-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .character-card {
-            transition: transform 0.3s ease;
-
-        }
-
-        .character-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .character-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            filter: invert(1) brightness(1.3) contrast(1.3);
-        }
-
-        .accordion-button::after {
-            filter: invert(0);
-        }
+    .episode-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
 
-        .stat-card {
-            background: linear-gradient(135deg, #4c1d95 0%, #312e81 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-        }
+    .ranking-card img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
 
-        .action-btn {
-            transition: transform 0.2s ease;
-        }
+    .ranking-card {
+      transition: transform 0.2s ease;
+    }
 
-        .action-btn:hover {
-            transform: scale(1.05);
-        }
+    .ranking-card:hover {
+      transform: translateY(-4px);
+    }
 
-        .carousel-item img {
-            height: 400px;
-            object-fit: cover;
-            object-position: 50% 15%;
-            border-radius: 10px;
-        }
 
-        .float-link {
-            display: inline-block;
-            transition: transform .2s, box-shadow .2s;
-        }
+    .main-visual,
+    .sub-visual {
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #eee;
+    }
 
-        .float-link:hover {
-            transform: translateY(-2px);
-        }
-    </style>
+    .main-visual {
+      aspect-ratio: 16 / 9;
+    }
+
+    .main-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sub-visual {
+      aspect-ratio: 16 / 9;
+    }
+
+    .sub-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    .work-title {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    .status-badge {
+      font-size: 0.8rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #fde7ee;
+      font-weight: bold;
+    }
+
+    .accordion-button::after {
+      transition: transform 0.3s ease;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #f1f1f1;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      margin: 4px;
+    }
+
+    .rating-stars {
+      color: #fbbf24;
+    }
+
+    .rating-large {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .character-card {
+      transition: transform 0.3s ease;
+
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .character-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      filter: invert(1) brightness(1.3) contrast(1.3);
+    }
+
+    .accordion-button::after {
+      filter: invert(0);
+    }
+
+
+    .stat-card {
+      background: linear-gradient(135deg, #4c1d95 0%, #312e81 100%);
+      color: white;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .action-btn {
+      transition: transform 0.2s ease;
+    }
+
+    .action-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+      object-position: 50% 15%;
+      border-radius: 10px;
+    }
+
+    .float-link {
+      display: inline-block;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .float-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .episode-card {
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .episode-card:hover {
+      background-color: #f8f9fa;
+      opacity: 0.85;
+    }
+
+    .ranking-card {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .ranking-card:hover {
+      opacity: 0.8;
+    }
+
+    .ranking-scroll {
+      scroll-snap-type: x mandatory;
+    }
+
+    .ranking-item {
+      width: 20%;
+      min-width: 200px;
+      scroll-snap-align: start;
+    }
+
+    .episode-wrapper {
+      position: relative;
+    }
+
+    .episode-nav {
+      position: absolute;
+      top: 55%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: default;
+      z-index: 5;
+    }
+
+    .episode-nav-left {
+      left: -22px;
+    }
+
+    .episode-nav-right {
+      right: -22px;
+    }
+
+    .episode-nav i {
+      font-size: 1.4rem;
+      color: #555;
+    }
+
+    .episode-nav:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+
+    @media (max-width: 991.98px) {
+      .sub-visual {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .episode-nav {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-film"></i> AnimeHub
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">ホーム</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="anime-list.html">作品一覧</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="anime-ranking.html">ランキング</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="anime-mylist.html">マイリスト</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="anime-community.html">コミュニティ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
-                    </li>
-                </ul>
-                <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
-                    <i class="bi bi-person-circle"></i> ログイン</a>
-            </div>
-        </div>
+  <!-- ナビゲーションバー -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-film"></i> AnimeHub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">ホーム</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="anime-list.html">作品一覧</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="anime-ranking.html">ランキング</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="anime-mylist.html">マイリスト</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="anime-community.html">コミュニティ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
+          </li>
+        </ul>
+        <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+          <i class="bi bi-person-circle"></i> ログイン</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <!-- パンくずリスト -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">ホーム</a></li>
+        <li class="breadcrumb-item"><a href="anime-list.html">作品一覧</a></li>
+        <li class="breadcrumb-item active" aria-current="page">ドラゴンボールZ</li>
+      </ol>
     </nav>
 
-    <div class="container mt-4">
-        <!-- パンくずリスト -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">ホーム</a></li>
-                <li class="breadcrumb-item"><a href="anime-list.html">作品一覧</a></li>
-                <li class="breadcrumb-item active" aria-current="page">異世界の勇者 ～運命の旅路～</li>
-            </ol>
-        </nav>
 
-        <!-- 作品メイン情報 -->
-        <div class="row mb-5">
-            <div class="col-lg-8">
-                <!-- 画像カルーセル -->
-                <div id="animeCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="0"
-                            class="active"></button>
-                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="2"></button>
-                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/異世界の勇者 ～運命の旅路～.webp" class="d-block w-100" alt="メインビジュアル">
-                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>メインビジュアル</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/battle.webp" class="d-block w-100" alt="バトルシーン">
-                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>迫力のバトルシーン</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/ordinary.webp" class="d-block w-100" alt="日常シーン">
-                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>仲間との日常</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/scenery.webp" class="d-block w-100" alt="異世界の風景">
-                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>美しい異世界の風景</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#animeCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                        <span class="visually-hidden">前へ</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#animeCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="visually-hidden">次へ</span>
-                    </button>
-                </div>
-
-                <!-- タイトルと基本情報 -->
-                <div class="mb-4">
-                    <div class="d-flex gap-2 mb-3">
-                        <span class="badge bg-primary fs-6">ファンタジー</span>
-                        <span class="badge bg-warning text-dark fs-6">アクション</span>
-                        <span class="badge bg-success fs-6">放送中</span>
-                        <span class="badge bg-danger fs-6">人気</span>
-                    </div>
-                    <h1 class="display-4 fw-bold mb-3">異世界の勇者 ～運命の旅路～</h1>
-                    <p class="lead text-muted">Isekai no Yuusha: Unmei no Tabiji</p>
-                </div>
-
-                <!-- あらすじ -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="card-title fw-bold mb-3"><i class="bi bi-book"></i> あらすじ</h3>
-                        <p class="card-text">
-                            平凡な高校生・佐藤翔太は、ある日突然異世界に召喚される。そこは魔法と剣が支配する世界で、翔太は伝説の勇者として世界を救う使命を背負うことになる。
-                        </p>
-                        <p class="card-text">
-                            最初は戸惑いながらも、仲間たちとの出会いを通じて成長していく翔太。魔王軍との戦い、王国の陰謀、そして自分自身の運命と向き合いながら、真の勇者へと成長していく物語。
-                        </p>
-                        <p class="card-text">
-                            笑いあり、涙あり、感動ありの王道ファンタジーアクション!仲間との絆、勇気、そして希望を描いた壮大な冒険譚が今、始まる!
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 作品情報アコーディオン -->
-                <div class="accordion mb-4" id="animeInfoAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#staffInfo">
-                                <i class="bi bi-people-fill me-2"></i> スタッフ情報
-                            </button>
-                        </h2>
-                        <div id="staffInfo" class="accordion-collapse collapse show"
-                            data-bs-parent="#animeInfoAccordion">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <strong>原作:</strong> 山田太郎
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>監督:</strong> 鈴木一郎
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>シリーズ構成:</strong> 田中花子
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>キャラクターデザイン:</strong> 佐藤美咲
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>音楽:</strong> 高橋健太
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>アニメーション制作:</strong> A-1 Pictures
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#broadcastInfo">
-                                <i class="bi bi-tv me-2"></i> 放送情報
-                            </button>
-                        </h2>
-                        <div id="broadcastInfo" class="accordion-collapse collapse"
-                            data-bs-parent="#animeInfoAccordion">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <strong>放送時期:</strong> 2024年秋
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>話数:</strong> 全24話(予定)
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>放送局:</strong> TOKYO MX、BS11 他
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>放送日時:</strong> 毎週土曜 24:00〜
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <strong>配信:</strong> Amazon Prime Video、Netflix、U-NEXT、dアニメストア
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#musicInfo">
-                                <i class="bi bi-music-note-beamed me-2"></i> 主題歌・音楽
-                            </button>
-                        </h2>
-                        <div id="musicInfo" class="accordion-collapse collapse" data-bs-parent="#animeInfoAccordion">
-                            <div class="accordion-body">
-                                <div class="mb-3">
-                                    <strong>オープニングテーマ:</strong><br>
-                                    「運命の扉」 / SPYAIR
-                                </div>
-                                <div class="mb-3">
-                                    <strong>エンディングテーマ:</strong><br>
-                                    「明日への道」 / Aimer
-                                </div>
-                                <div>
-                                    <strong>劇伴:</strong><br>
-                                    澤野弘之
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- サイドバー -->
-            <div class="col-lg-4">
-                <!-- 評価カード -->
-                <div class="stat-card mb-4">
-                    <div class="text-center">
-                        <div class="rating-large mb-2">4.5</div>
-                        <div class="rating-stars fs-3 mb-3">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                        </div>
-                        <p class="mb-0"><a href="anime-review.html"
-                                class="link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover float-link">1,234件のレビュー</a>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- アクションボタン -->
-                <div class="d-grid gap-2 mb-4">
-                    <button class="btn btn-primary btn-lg action-btn">
-                        <i class="bi bi-star"></i> マイリストに追加
-                    </button>
-                    <button class="btn btn-outline-primary btn-lg action-btn">
-                        <i class="bi bi-pencil-square"></i> レビューを書く
-                    </button>
-                    <button class="btn btn-outline-secondary btn-lg action-btn">
-                        <i class="bi bi-share"></i> シェアする
-                    </button>
-                </div>
-
-                <!-- 統計情報 -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-bar-chart-fill"></i> 統計情報</h5>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>視聴中</span>
-                                <strong>8,234人</strong>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-success" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>視聴済み</span>
-                                <strong>2,456人</strong>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-primary" style="width: 40%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>視聴予定</span>
-                                <strong>15,678人</strong>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar bg-warning" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- タグ -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-tags-fill"></i> タグ</h5>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-info">#異世界転生</span>
-                            <span class="badge bg-info">#勇者</span>
-                            <span class="badge bg-info">#魔法</span>
-                            <span class="badge bg-info">#冒険</span>
-                            <span class="badge bg-info">#成長</span>
-                            <span class="badge bg-info">#仲間</span>
-                            <span class="badge bg-info">#バトル</span>
-                            <span class="badge bg-info">#感動</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 関連リンク -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-link-45deg"></i> 関連リンク</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a href="#" class="text-decoration-none">
-                                    <i class="bi bi-globe"></i> 公式サイト
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#" class="text-decoration-none">
-                                    <i class="bi bi-twitter-x"></i> 公式X
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#" class="text-decoration-none">
-                                    <i class="bi bi-youtube"></i> 公式YouTube
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">
-                                    <i class="bi bi-book"></i> 原作小説
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="container my-5">
+      <div class="row g-3 mb-5">
+        <div class="col-12 col-lg-8">
+          <div class="main-visual">
+            <img src="images/main.png" alt="メイン">
+          </div>
         </div>
 
-        <!-- キャラクター紹介 -->
-        <section class="mb-5">
-            <h2 class="fw-bold mb-4"><i class="bi bi-people-fill"></i> キャラクター</h2>
+        <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+          <div class="sub-visual">
+            <img src="images/サブ1.png" alt="サブ1">
+          </div>
+          <div class="sub-visual">
+            <img src="images/サブ2.png" alt="サブ2">
+          </div>
+        </div>
+      </div>
 
-            <div class="accordion" id="characterAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#mainCharacters">
-                            メインキャラクター
-                        </button>
-                    </h2>
-                    <div id="mainCharacters" class="accordion-collapse collapse show"
-                        data-bs-parent="#characterAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-4">
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/syouta.webp" class="card-img-top character-img" alt="佐藤翔太">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">佐藤翔太</h5>
-                                            <p class="text-muted small mb-2">CV: 梶裕貴</p>
-                                            <p class="card-text small">本作の主人公。平凡な高校生だったが、異世界に召喚され勇者となる。正義感が強く仲間思い。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/erina.webp" class="card-img-top character-img" alt="エリナ">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">エリナ・フォルテシア</h5>
-                                            <p class="text-muted small mb-2">CV: 早見沙織</p>
-                                            <p class="card-text small">王国の第一王女。魔法の才能に優れ、翔太の最初の仲間となる。気高く優雅だが意外とドジ。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/ryuu.webp" class="card-img-top character-img" alt="リュウ">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">リュウ・ドラゴニア</h5>
-                                            <p class="text-muted small mb-2">CV: 中村悠一</p>
-                                            <p class="card-text small">竜族の戦士。剣の達人で、クールな性格だが仲間への信頼は厚い。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/runa.webp" class="card-img-top character-img" alt="ルナ">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">ルナ・シルフィード</h5>
-                                            <p class="text-muted small mb-2">CV: 花澤香菜</p>
-                                            <p class="card-text small">エルフ族の弓使い。明るく元気な性格でムードメーカー。回復魔法も得意。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#subCharacters">
-                            サブキャラクター
-                        </button>
-                    </h2>
-                    <div id="subCharacters" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-4">
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/king.webp" class="card-img-top character-img" alt="アルフレッド王">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">アルフレッド王</h5>
-                                            <p class="text-muted small mb-2">CV: 大塚明夫</p>
-                                            <p class="card-text small">王国を治める賢王。翔太を勇者として召喚した張本人。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/devil.webp" class="card-img-top character-img" alt="魔王">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">魔王ゼノン</h5>
-                                            <p class="text-muted small mb-2">CV: 子安武人</p>
-                                            <p class="card-text small">世界を脅かす魔王。圧倒的な力を持つが、その真意は謎に包まれている。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/wiseman.webp" class="card-img-top character-img" alt="賢者">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">賢者マーリン</h5>
-                                            <p class="text-muted small mb-2">CV: 速水奨</p>
-                                            <p class="card-text small">古代から生きる大賢者。翔太たちに助言を与える。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/merchant.webp" class="card-img-top character-img" alt="商人">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">商人ギルバート</h5>
-                                            <p class="text-muted small mb-2">CV: 杉田智和</p>
-                                            <p class="card-text small">各地を旅する商人。翔太たちに武器や道具を提供する。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+      <div class="col-12 col-lg-5">
+        <h1 class="work-title mb-2">ドラゴンボールZ（全291話）</h1>
+
+        <div class="mb-3">
+          <span class="badge bg-success status-badge">1080p</span>
+          <span class="badge bg-danger status-badge">COMPLETE</span>
+        </div>
+
+        <div class="d-flex gap-2 mb-3">
+          <button class="btn btn-outline-secondary">
+            <a href="#" class="text-decoration-none text-dark">
+              <i class="bi bi-plus"></i> マイリスト
+            </a>
+          </button>
+          <button class="btn btn-outline-danger">
+            <a href="#" class="text-decoration-none text-dark">
+              <i class="bi bi-heart"></i> 気になる
+            </a>
+          </button>
+        </div>
+
+        <small class="text-muted">気になる登録数：○○</small>
+      </div>
     </div>
 
-    <!-- フッター -->
-    <footer class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <h5 class="fw-bold mb-3"><i class="bi bi-film"></i> AnimeHub</h5>
-                    <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
-                </div>
-                <div class="col-md-2 mb-3">
-                    <h6 class="fw-bold mb-3">サイト情報</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 mb-3">
-                    <h6 class="fw-bold mb-3">サポート</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <h6 class="fw-bold mb-3">フォローする</h6>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="border-light">
-            <p class="text-center text-light mb-0">&copy; 2025 AnimeHub. All rights reserved.</p>
-        </div>
-    </footer>
-    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
-        <i class="bi bi-chevron-up"></i>
-    </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="common.js"></script>
+    <div class="accordion mb-4" id="episodeAccordion">
+      <div class="accordion-item">
+
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#episodeBody">
+            エピソード
+          </button>
+        </h2>
+
+        <div id="episodeBody" class="accordion-collapse collapse">
+          <div class="accordion-body p-0">
+
+            <!-- ↓↓↓ ここから中身はほぼそのまま ↓↓↓ -->
+            <div class="episode-wrapper">
+
+              <!-- 左右ナビ -->
+              <button class="episode-nav episode-nav-left">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="episode-nav episode-nav-right">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+
+              <div class="row g-3 p-3">
+                <!-- 既存の episode-card 群をそのまま -->
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/1.png" alt="第1話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第1話</strong>
+                        <div class="text-muted small">ミニ悟空はおぼっちゃま！ ボク悟飯です</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/2.png" alt="第2話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第2話</strong>
+                        <div class="text-muted small">史上最強の戦士は悟空の兄だった！</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/3.png" alt="第3話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第3話</strong>
+                        <div class="text-muted small">やった！ これが地上最強のコンビだ！</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/4.png" alt="第4話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第4話</strong>
+                        <div class="text-muted small">ピッコロの切り札！ 悟飯は泣きむしクン</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/5.png" alt="第5話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第5話</strong>
+                        <div class="text-muted small">悟空死す！ ラストチャンスは一度だけ</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/6.png" alt="第6話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第6話</strong>
+                        <div class="text-muted small">エンマ様もビックリあの世でファイト</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/7.png" alt="第7話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第7話</strong>
+                        <div class="text-muted small">恐竜とサバイバル！ 悟飯のツライ修行</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/8.png" alt="第8話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第8話</strong>
+                        <div class="text-muted small">月の輝く夜に大変身！ 悟飯パワーの秘密</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/9.png" alt="第9話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第9話</strong>
+                        <div class="text-muted small">ゴメンねロボットさん 砂漠に消えた涙</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/10.png" alt="第10話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第10話</strong>
+                        <div class="text-muted small">泣くな悟飯！ はじめての闘い</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/11.png" alt="第11話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第11話</strong>
+                        <div class="text-muted small">宇宙一の強戦士 サイヤ人めざめる！</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <div class="episode-card d-flex align-items-center">
+
+                      <div class="episode-thumb">
+                        <img src="images/12.png" alt="第12話">
+                      </div>
+
+                      <div class="episode-info">
+                        <strong>第12話</strong>
+                        <div class="text-muted small">蛇の道でいねむり 悟空が落っこちる</div>
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion mb-4" id="storyAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#storyBody">
+            あらすじ ／ ジャンル
+          </button>
+        </h2>
+
+        <div id="storyBody" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <p>
+              天下一武道会の壮絶な闘いから５年。大人になった孫悟空は、結婚したチチとの間に息子の悟飯をもうけ、平穏な日々を過ごしていた。だが、ある日突然、宇宙からやって来た謎の男によって、平和はもろくも崩れ去ってしまう。ラディッツと名乗る彼は、強靱な尻尾を持ち、悟空やクリリンさえも一撃で吹き飛ばしてしまうほどのパワーを持っていた。このラディッツこそ、惑星ベジータを出身地にもつ戦闘民族サイヤ人にして、星が滅亡した際に生き残った、孫悟空の実の兄だった！　ラディッツは力なき悟飯を人質に取り、自分たちの仲間に加わるよう悟空に迫る。サイヤ人の狙いは地球人を絶滅させ、星を我がものにすること。邪悪な野望に手を貸すことなど出来るはずがない。悟空は宿命のライバル・ピッコロとコンビを組み、ラディッツとの闘いに挑む！
+            </p>
+
+            <strong>ジャンル</strong>
+            <p>ファンタジー <br>アクション <br>SF</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion mb-4" id="castAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#castBody">
+            キャスト ／ スタッフ
+          </button>
+        </h2>
+
+        <div id="castBody" class="accordion-collapse collapse">
+          <div class="accordion-body">
+
+            <h6 class="fw-bold">キャスト</h6>
+            <div class="mb-3">
+              <span
+                class="tag">孫悟空、孫悟飯、孫悟天:野沢雅子／ピッコロ:古川登志夫／クリリン:田中真弓／ベジータ:堀川亮／ラディッツ:千葉繁／ナッパ:飯塚昭三／ブルマ:鶴ひろみ／ヤムチャ:古谷徹／トランクス:草尾毅／界王様:八奈見乗児／フリーザ:中尾隆聖／18号:伊藤美紀／セル:若本規夫／魔人ブウ:塩屋浩三／ミスター・サタン:郷里大輔／ビーデル:皆口裕子</span>
+            </div>
+
+            <h6 class="fw-bold">スタッフ</h6>
+            <div>
+              <span class="tag">原作:鳥山明／企画:清水賢治</span>
+              <span class="tag">制作年：1989年</span>
+              <span class="tag">©バードスタジオ／集英社・東映アニメーション</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"> シリーズ/関連のアニメ</h2>
+        <a href="#" class="fw-bold text-decoration-none">
+          すべて見る <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+
+      <div class="ranking-scroll d-flex gap-3 overflow-auto pb-2">
+        <div class="ranking-item flex-shrink-0">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="position-relative">
+              <div class="card ranking-card h-100">
+                <img src="images/ドラゴンボール.png" class="card-img-top" alt="">
+                <div class="card-body p-2">
+                  <small class="fw-bold">
+                    ドラゴンボール
+                  </small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="ranking-item flex-shrink-0">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="position-relative">
+              <div class="card ranking-card h-100">
+                <img src="images/gt.png" class="card-img-top" alt="">
+                <div class="card-body p-2">
+                  <small class="fw-bold">
+                    ドラゴンボールGT
+                  </small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="ranking-item flex-shrink-0">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="position-relative">
+              <div class="card ranking-card h-100">
+                <img src="images/改.png" class="card-img-top" alt="">
+                <div class="card-body p-2">
+                  <small class="fw-bold">
+                    ドラゴンボール改
+                  </small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="ranking-item flex-shrink-0">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="position-relative">
+              <div class="card ranking-card h-100">
+                <img src="images/超.png" class="card-img-top" alt="">
+                <div class="card-body p-2">
+                  <small class="fw-bold">
+                    ドラゴンボール超
+                  </small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="ranking-item flex-shrink-0">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="position-relative">
+              <div class="card ranking-card h-100">
+                <img src="images/スーパーヒーロー.png" class="card-img-top" alt="">
+                <div class="card-body p-2">
+                  <small class="fw-bold">
+                    スーパーヒーロー
+                  </small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="ranking-item flex-shrink-0">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="position-relative">
+              <div class="card ranking-card h-100">
+                <img src="images/daima.png" class="card-img-top" alt="">
+                <div class="card-body p-2">
+                  <small class="fw-bold">
+                    ドラゴンボールDAIMA
+                  </small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <!-- フッター -->
+  <footer class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold mb-3"><i class="bi bi-film"></i> AnimeHub</h5>
+          <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
+        </div>
+        <div class="col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">サイト情報</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">About</a></li>
+            <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+            <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-3">
+          <h6 class="fw-bold mb-3">サポート</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+            <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
+            <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold mb-3">フォローする</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light">
+      <p class="text-center text-light mb-0">&copy; 2025 AnimeHub. All rights reserved.</p>
+    </div>
+  </footer>
+  <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="common.js"></script>
 </body>
 
 </html>
