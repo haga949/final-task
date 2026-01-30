@@ -44,20 +44,10 @@
       justify-content: center;
     }
 
-
     .ranking-card img {
       aspect-ratio: 16 / 9;
       object-fit: cover;
     }
-
-    .ranking-card {
-      transition: transform 0.2s ease;
-    }
-
-    .ranking-card:hover {
-      transform: translateY(-4px);
-    }
-
 
     .main-visual,
     .sub-visual {
@@ -168,18 +158,6 @@
       transform: scale(1.05);
     }
 
-    .carousel-item img {
-      height: 400px;
-      object-fit: cover;
-      object-position: 50% 15%;
-      border-radius: 10px;
-    }
-
-    .float-link {
-      display: inline-block;
-      transition: transform .2s, box-shadow .2s;
-    }
-
     .float-link:hover {
       transform: translateY(-2px);
     }
@@ -199,6 +177,7 @@
     }
 
     .ranking-card:hover {
+      transform: translateY(-4px);
       opacity: 0.8;
     }
 
