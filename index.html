@@ -57,7 +57,7 @@
 
     /* 6枚表示 */
     .horizontal-carousel[data-carousel="grid6"] .horizontal-item {
-      flex: 0 0 calc(16.666% - 12px);
+      flex: 0 0 calc(100% / 4.7);
     }
 
     .anime-card img {
@@ -84,13 +84,13 @@
       transform: scale(1.02);
     }
 
-    /* ===== 広告エリア ===== */
     .ranking-ad {
       width: 100vw;
       margin-left: calc(50% - 50vw);
       background-color: #ffe6ee;
     }
 
+    /* ===== 広告エリア ===== */
     .ad-wrapper {
       background: repeating-linear-gradient(45deg,
           #ffd1dc,
@@ -151,8 +151,6 @@
     .ad-image {
       cursor: pointer;
     }
-
-
 
     @media (max-width: 575px) {
 
@@ -312,9 +310,9 @@
           <div class="horizontal-item">
             <div class="card anime-card">
               <a href="#" class="text-decoration-none text-dark">
-                <img src="images/sample.jpg">
+                <img src="images/音楽少女のメロディ.webp">
                 <div class="card-body p-2">
-                  <h6 class="fw-bold mb-1">Sample1</h6>
+                  <h6 class="fw-bold mb-1">音楽少女のメロディ</h6>
                   <small class="text-muted">23:00更新 / 第4話</small>
                 </div>
               </a>
@@ -323,9 +321,9 @@
           <div class="horizontal-item">
             <div class="card anime-card">
               <a href="#" class="text-decoration-none text-dark">
-                <img src="images/sample.jpg">
+                <img src="images/料理バトル王.webp">
                 <div class="card-body p-2">
-                  <h6 class="fw-bold mb-1">Sample2</h6>
+                  <h6 class="fw-bold mb-1">料理バトル王</h6>
                   <small class="text-muted">23:30更新 / 第4話</small>
                 </div>
               </a>
@@ -334,9 +332,9 @@
           <div class="horizontal-item">
             <div class="card anime-card">
               <a href="#" class="text-decoration-none text-dark">
-                <img src="images/sample.jpg">
+                <img src="images/ロボット大戦記.webp">
                 <div class="card-body p-2">
-                  <h6 class="fw-bold mb-1">Sample3</h6>
+                  <h6 class="fw-bold mb-1">ロボット大戦記</h6>
                   <small class="text-muted">23:30更新 / 第5話</small>
                 </div>
               </a>
@@ -421,9 +419,9 @@
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
                 <div class="card ranking-card">
-                  <img src="images/スーパーヒーロー.png" class="card-img-top">
+                  <img src="images/daima.png" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">スーパーヒーロー</small>
+                    <small class="fw-bold">ドラゴンボールDAIMA</small>
                   </div>
                 </div>
               </div>
@@ -433,9 +431,9 @@
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
                 <div class="card ranking-card">
-                  <img src="images/daima.png" class="card-img-top">
+                  <img src="images/神と神.jpg" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">ドラゴンボールDAIMA</small>
+                    <small class="fw-bold">ドラゴンボールZ 神と神</small>
                   </div>
                 </div>
               </div>
@@ -484,7 +482,7 @@
     <section class="mb-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold">
-          <i class="bi bi-calendar-day-fill text-primary"></i> デイリーランキング
+          <i class="bi bi-calendar-day-fill text-primary"></i> 総合ランキング
         </h2>
       </div>
 
@@ -493,10 +491,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">1位</span>
                 <div class="card ranking-card">
                   <img src="images/最強魔法使いの転生.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">1位</span>
                     <small class="fw-bold">最強魔法使いの転生</small>
                   </div>
                 </div>
@@ -506,10 +504,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">2位</span>
                 <div class="card ranking-card">
                   <img src="images/竜騎士の伝説.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">2位</span>
                     <small class="fw-bold">竜騎士の伝説</small>
                   </div>
                 </div>
@@ -519,10 +517,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">3位</span>
                 <div class="card ranking-card">
                   <img src="images/魔法学園の日常.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">3位</span>
                     <small class="fw-bold">魔法学園の日常</small>
                   </div>
                 </div>
@@ -532,10 +530,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">4位</span>
                 <div class="card ranking-card">
                   <img src="images/桜色の約束.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">4位</span>
                     <small class="fw-bold">桜色の約束</small>
                   </div>
                 </div>
@@ -545,10 +543,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">5位</span>
                 <div class="card ranking-card">
                   <img src="images/量子戦士クロノス.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">5位</span>
                     <small class="fw-bold">量子戦士クロノス</small>
                   </div>
                 </div>
@@ -558,10 +556,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">6位</span>
                 <div class="card ranking-card">
                   <img src="images/近未来探偵ネオ.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">6位</span>
                     <small class="fw-bold">近未来探偵ネオ</small>
                   </div>
                 </div>
@@ -571,10 +569,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">7位</span>
                 <div class="card ranking-card">
                   <img src="images/都市伝説探偵.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">7位</span>
                     <small class="fw-bold">都市伝説探偵</small>
                   </div>
                 </div>
@@ -605,6 +603,42 @@
       <div class="horizontal-carousel" data-carousel="grid6">
 
         <div class="horizontal-track">
+          <div class="horizontal-item">
+            <a href="#" class="text-decoration-none text-dark">
+              <div class="position-relative">
+                <div class="card ranking-card">
+                  <img src="images/sample.jpg" class="card-img-top">
+                  <div class="card-body p-2">
+                    <small class="fw-bold">Sample1</small>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="horizontal-item">
+            <a href="#" class="text-decoration-none text-dark">
+              <div class="position-relative">
+                <div class="card ranking-card">
+                  <img src="images/sample.jpg" class="card-img-top">
+                  <div class="card-body p-2">
+                    <small class="fw-bold">Sample2</small>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="horizontal-item">
+            <a href="#" class="text-decoration-none text-dark">
+              <div class="position-relative">
+                <div class="card ranking-card">
+                  <img src="images/sample.jpg" class="card-img-top">
+                  <div class="card-body p-2">
+                    <small class="fw-bold">Sample3</small>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
@@ -653,42 +687,6 @@
               </div>
             </a>
           </div>
-          <div class="horizontal-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <div class="position-relative">
-                <div class="card ranking-card">
-                  <img src="images/sample.jpg" class="card-img-top">
-                  <div class="card-body p-2">
-                    <small class="fw-bold">Sample8</small>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="horizontal-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <div class="position-relative">
-                <div class="card ranking-card">
-                  <img src="images/sample.jpg" class="card-img-top">
-                  <div class="card-body p-2">
-                    <small class="fw-bold">Sample9</small>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="horizontal-item">
-            <a href="#" class="text-decoration-none text-dark">
-              <div class="position-relative">
-                <div class="card ranking-card">
-                  <img src="images/sample.jpg" class="card-img-top">
-                  <div class="card-body p-2">
-                    <small class="fw-bold">Sample10</small>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -706,7 +704,7 @@
     <section class="mb-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold">
-          <i class="bi bi-fire text-danger"></i> 人気ランキング
+          <i class="bi bi-fire text-danger"></i> 週間ランキング
         </h2>
       </div>
 
@@ -715,11 +713,11 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">1位</span>
                 <div class="card ranking-card">
-                  <img src="images/最強魔法使いの転生.webp" class="card-img-top">
+                  <img src="images/桜色の約束.webp" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">最強魔法使いの転生</small>
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">1位</span>
+                    <small class="fw-bold">桜色の約束</small>
                   </div>
                 </div>
               </div>
@@ -728,11 +726,11 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">2位</span>
                 <div class="card ranking-card">
-                  <img src="images/竜騎士の伝説.webp" class="card-img-top">
+                  <img src="images/量子戦士クロノス.webp" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">竜騎士の伝説</small>
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">2位</span>
+                    <small class="fw-bold">量子戦士クロノス</small>
                   </div>
                 </div>
               </div>
@@ -741,11 +739,11 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">3位</span>
                 <div class="card ranking-card">
-                  <img src="images/魔法学園の日常.webp" class="card-img-top">
+                  <img src="images/異世界の勇者 ～運命の旅路～.webp" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">魔法学園の日常</small>
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">3位</span>
+                    <small class="fw-bold">異世界の勇者 ～運命の旅路～</small>
                   </div>
                 </div>
               </div>
@@ -754,10 +752,10 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">4位</span>
                 <div class="card ranking-card">
                   <img src="images/近未来探偵ネオ.webp" class="card-img-top">
                   <div class="card-body p-2">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">4位</span>
                     <small class="fw-bold">近未来探偵ネオ</small>
                   </div>
                 </div>
@@ -767,11 +765,11 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">5位</span>
                 <div class="card ranking-card">
-                  <img src="images/sample.jpg" class="card-img-top">
+                  <img src="images/音楽少女のメロディ.webp" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">Sample11</small>
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">5位</span>
+                    <small class="fw-bold">音楽少女のメロディ</small>
                   </div>
                 </div>
               </div>
@@ -780,11 +778,11 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">6位</span>
                 <div class="card ranking-card">
-                  <img src="images/sample.jpg" class="card-img-top">
+                  <img src="images/ロボット大戦記.webp" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">Sample12</small>
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">6位</span>
+                    <small class="fw-bold">ロボット大戦記</small>
                   </div>
                 </div>
               </div>
@@ -793,11 +791,11 @@
           <div class="horizontal-item">
             <a href="#" class="text-decoration-none text-dark">
               <div class="position-relative">
-                <span class="badge bg-success position-absolute top-0 start-0 m-2">7位</span>
                 <div class="card ranking-card">
-                  <img src="images/sample.jpg" class="card-img-top">
+                  <img src="images/料理バトル王.webp" class="card-img-top">
                   <div class="card-body p-2">
-                    <small class="fw-bold">Sample13</small>
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">7位</span>
+                    <small class="fw-bold">料理バトル王</small>
                   </div>
                 </div>
               </div>
