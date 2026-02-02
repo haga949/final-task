@@ -104,10 +104,12 @@
     /* 広告画像（横長バナー） */
     .ad-image {
       width: 100%;
-      height: 110px;
-      /* ← ここが重要（横長感） */
+      aspect-ratio: 3.5 / 1;
+      /* 実際の広告比率に合わせる */
       object-fit: cover;
-      border-radius: 10px;
+      /* 余白を消して枠いっぱいに表示 */
+      border-radius: 12px;
+      display: block;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -174,7 +176,8 @@
       }
 
       .ad-image {
-        height: 110px;
+        /* height: 140px; */
+        aspect-ratio: 3 / 1;
         border-radius: 14px;
       }
     }
@@ -190,6 +193,10 @@
       /* その他（おすすめ・ランキング・新着など） */
       .horizontal-carousel[data-carousel="grid6"] .horizontal-item {
         flex: 0 0 calc(100% / 2.3);
+      }
+
+      .ad-image {
+        aspect-ratio: 3.2 / 1;
       }
     }
   </style>
@@ -449,19 +456,19 @@
 
           <div class="col-12 col-md-4">
             <a href="#" class="text-decoration-none text-dark">
-              <img src="images/sample.jpg" class="ad-image" alt="">
+              <img src="images/広告1.png" class="ad-image" alt="">
             </a>
           </div>
 
           <div class="col-12 col-md-4">
             <a href="#" class="text-decoration-none text-dark">
-              <img src="images/sample.jpg" class="ad-image" alt="">
+              <img src="images/広告2.png" class="ad-image" alt="">
             </a>
           </div>
 
           <div class="col-12 col-md-4">
             <a href="#" class="text-decoration-none text-dark">
-              <img src="images/sample.jpg" class="ad-image" alt="">
+              <img src="images/広告3.png" class="ad-image" alt="">
             </a>
           </div>
 
@@ -472,7 +479,7 @@
     <section class="ranking-ad my-4 d-md-none">
       <div class="ad-wrapper">
         <a href="#" class="text-decoration-none text-dark">
-          <img src="images/sample.jpg" class="ad-image" alt="">
+          <img src="images/広告1.png" class="ad-image" alt="">
         </a>
       </div>
     </section>
@@ -587,7 +594,7 @@
     <section class="ranking-ad my-4 d-md-none">
       <div class="ad-wrapper">
         <a href="#" class="text-decoration-none text-dark">
-          <img src="images/sample.jpg" class="ad-image" alt="">
+          <img src="images/広告2.png" class="ad-image" alt="">
         </a>
       </div>
     </section>
@@ -695,7 +702,7 @@
     <section class="ranking-ad my-4 d-md-none">
       <div class="ad-wrapper">
         <a href="#" class="text-decoration-none text-dark">
-          <img src="images/sample.jpg" class="ad-image" alt="">
+          <img src="images/広告3.png" class="ad-image" alt="">
         </a>
       </div>
     </section>
